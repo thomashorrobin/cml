@@ -11,7 +11,7 @@ namespace cml_model.Components
         public cml_boolean(string optionName, bool optionValue) : base(optionName, optionValue) { }
         public override string render(int indent)
         {
-            return string.Format("{2}<boolean name=\"{0}\" value={1} />", Name, Value, new string('\t', indent));
+            return string.Format("{2}<boolean name=\"{0}\" value=\"{1}\" />", Name, Value.ToString().ToLower(), new string('\t', indent));
         }
     }
 }

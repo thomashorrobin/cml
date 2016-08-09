@@ -11,7 +11,7 @@ namespace cml_model.Components
         public cml_integer(string optionName, int optionValue) : base(optionName, optionValue) { }
         public override string render(int indent)
         {
-            return string.Format("{2}<integer name=\"{0}\" value={1} />", Name, Value, new string('\t', indent));
+            return string.Format("{2}<integer name=\"{0}\" value=\"{1}\" />", Name, Value, new string('\t', indent));
         }
     }
 }
