@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cml_model
 {
-    public class SingleAreaDocumentRoot : IRoot<IRenderable>
+    public class DocumentRoot
     {
         private List<IRenderable> rootList = new List<IRenderable>();
 

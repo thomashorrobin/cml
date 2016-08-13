@@ -40,19 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Area.cs" />
     <Compile Include="ComponentBase.cs" />
     <Compile Include="Components\cml-boolean.cs" />
     <Compile Include="Components\cml-date.cs" />
     <Compile Include="Components\cml-integer.cs" />
     <Compile Include="Components\cml-string.cs" />
-    <Compile Include="IRoot.cs" />
-    <Compile Include="SingleAreaDocumentRoot.cs" />
+    <Compile Include="ComponentType.cs" />
+    <Compile Include="MalformedCMLException.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="DocumentRoot.cs" />
     <Compile Include="Section.cs" />
     <Compile Include="IRenderable.cs" />
     <Compile Include="IValueItem.cs" />
-    <Compile Include="MultiAreaDocumentRoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="Tokenizer.cs" />
+    <Compile Include="TokenType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace cml_model
 {
-    interface IRoot<T>
+    public class MalformedCMLException : Exception
     {
-        string render();
-        void Add(T item);
+
     }
 }
