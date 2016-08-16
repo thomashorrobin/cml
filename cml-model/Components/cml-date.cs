@@ -16,5 +16,6 @@ namespace cml_model.Components
         {
             return string.Format("{2}<date name=\"{0}\" value=\"{1}\" />", Name, Value.ToString("yyyy-MM-dd"), new string('\t', indent));
         }
+        public override ComponentType ComponentType { get { return ComponentType.Date; } }
     }
 }

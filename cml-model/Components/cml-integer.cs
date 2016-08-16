@@ -13,5 +13,6 @@ namespace cml_model.Components
         {
             return string.Format("{2}<integer name=\"{0}\" value=\"{1}\" />", Name, Value, new string('\t', indent));
         }
+        public override ComponentType ComponentType { get { return ComponentType.Integer; } }
     }
 }

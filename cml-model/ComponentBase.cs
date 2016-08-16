@@ -16,6 +16,7 @@ namespace cml_model
         public string Name { get; private set; }
         public T Value { get; set; }
         public abstract string render(int indent);
+        public abstract ComponentType ComponentType { get; }
     }
 
     public interface IComponent : IRenderable { }

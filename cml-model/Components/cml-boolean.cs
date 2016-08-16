@@ -13,5 +13,6 @@ namespace cml_model.Components
         {
             return string.Format("{2}<boolean name=\"{0}\" value=\"{1}\" />", Name, Value.ToString().ToLower(), new string('\t', indent));
         }
+        public override ComponentType ComponentType { get { return ComponentType.Boolean; } }
     }
 }
