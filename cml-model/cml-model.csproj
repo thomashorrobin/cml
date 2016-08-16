@@ -45,7 +45,6 @@
     <Compile Include="Components\cml-date.cs" />
     <Compile Include="Components\cml-integer.cs" />
     <Compile Include="Components\cml-string.cs" />
-    <Compile Include="ComponentType.cs" />
     <Compile Include="IComponentParent.cs" />
     <Compile Include="MalformedCMLException.cs" />
     <Compile Include="Parser.cs" />

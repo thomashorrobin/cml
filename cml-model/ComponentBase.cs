@@ -19,4 +19,13 @@ namespace cml_model
     }
 
     public interface IComponent : IRenderable { }
+    public enum ComponentType
+    {
+        Section,
+        Root,
+        Integer,
+        String,
+        Boolean,
+        Date
+    }
 }
