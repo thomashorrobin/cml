@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using cml_model;
+using CML = cml_model;
 
 namespace cml_console
 {
@@ -14,8 +14,12 @@ namespace cml_console
             var file = System.IO.File.ReadAllText(@"C:\Users\THOMASHO\Documents\WriteText2.txt");
             try
             {
-                DocumentRoot root = Parser.ParserCML(file);
-                Console.Write(root.render(0));
+                //CML.DocumentRoot root = CML.Parser.ParserCML(file);
+                var root = CML.Token.getTokens(file);
+                foreach (var item in root)
+                {
+                    Console.WriteLine(item.ToString());
+                }
             }
             catch (cml_model.MalformedCMLException ex)
             {
