@@ -10,7 +10,7 @@ namespace cml_model
     {
         public static DocumentRoot ParserCML(string file)
         {
-            var tokens = Tokenizer.getTokens(file);
+            var tokens = Token.getTokens(file);
             return (DocumentRoot)Parse(tokens);
         }
         private static IRenderable Parse(List<Token> tokens)
