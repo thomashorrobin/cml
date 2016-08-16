@@ -15,12 +15,12 @@ namespace cml_model
         }
         string tagText;
         public TokenType TagType { get; private set; }
-        private ComponentType ComponentType {
+        public ComponentType ComponentType {
             get {
                 switch (tagText)
                 {
-                    case "area":
-                        return ComponentType.Area;
+                    case "cml":
+                        return ComponentType.Root;
                     case "section":
                         return ComponentType.Section;
                     case "integer":
@@ -29,6 +29,8 @@ namespace cml_model
                         return ComponentType.Boolean;
                     case "string":
                         return ComponentType.String;
+                    case "date":
+                        return ComponentType.Date;
                     default:
                         throw new MalformedCMLException();
                 }
@@ -37,6 +39,31 @@ namespace cml_model
         public override string ToString()
         {
             return tagText;
+        }
+        public bool IsComponent {
+            get {
+                return TagType == TokenType.Component;
+            }
+        }
+        public static IComponent getComponent(Token token)
+        {
+            switch (token.ComponentType)
+            {
+                case ComponentType.Section:
+                    throw new MalformedCMLException();
+                case ComponentType.Root:
+                    throw new MalformedCMLException();
+                case ComponentType.Integer:
+                    return new Components.cml_integer("test", 1);
+                case ComponentType.String:
+                    return new Components.cml_string("test", "1");
+                case ComponentType.Boolean:
+                    return new Components.cml_boolean("test", true);
+                case ComponentType.Date:
+                    return new Components.cml_date("test", new DateTime(2015,2,12));
+                default:
+                    throw new MalformedCMLException();
+            }
         }
     }
 }

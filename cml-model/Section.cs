@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cml_model
 {
-    public class Section : IRenderable
+    public class Section : IRenderable, IComponentParent
     {
         public Section(string sectionName)
         {
@@ -20,6 +20,11 @@ namespace cml_model
         public void Add(IComponent item)
         {
             sectionList.Add(item);
+        }
+
+        public void Add(IRenderable item)
+        {
+            Add((IComponent)item);
         }
 
         string IRenderable.render(int indent)

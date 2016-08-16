@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace cml_model
 {
-    public enum ComponentType
+    public interface IComponentParent : IRenderable
     {
-        Section,
-        Root,
-        Integer,
-        String,
-        Boolean,
-        Date
+        void Add(IRenderable item);
     }
 }

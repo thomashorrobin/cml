@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cml_model
 {
-    public class DocumentRoot
+    public class DocumentRoot : IRenderable, IComponentParent
     {
         private List<IRenderable> rootList = new List<IRenderable>();
 
@@ -15,7 +15,7 @@ namespace cml_model
             rootList.Add(item);
         }
 
-        public string render()
+        public string render(int indent)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("<cml>");

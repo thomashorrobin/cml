@@ -8,19 +8,44 @@ namespace cml_model
 {
     public static class Parser
     {
-        //public static IDocumentRoot ParserCML(string file)
-        //{
-        //    var tokens = Tokenizer.getStrings(file);
-        //    switch (calculateDocumentType(tokens))
-        //    {
-        //        case DocumentType.MultiArea:
-        //            MultiAreaDocumentRoot root = new MultiAreaDocumentRoot();
-        //            break;
-        //        case DocumentType.SingleArea:
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
+        public static DocumentRoot ParserCML(string file)
+        {
+            var tokens = Tokenizer.getTokens(file);
+            return (DocumentRoot)Parse(tokens);
+        }
+        private static IRenderable Parse(List<Token> tokens)
+        {
+            Token token = tokens[0];
+            tokens.RemoveAt(0);
+            if (token.IsComponent)
+            {
+                return Token.getComponent(token);
+            }
+            else if(token.TagType == TokenType.Close)
+            {
+                throw new MalformedCMLException();
+            }
+            else
+            {
+                IComponentParent container;
+                if (token.ComponentType == ComponentType.Root)
+                {
+                    container = new DocumentRoot();
+                }
+                else if (token.ComponentType == ComponentType.Section)
+                {
+                    container = new Section("test name");
+                }
+                else
+                {
+                    throw new MalformedCMLException();
+                }
+                while (tokens[0].IsComponent)
+                {
+                    container.Add(Parse(tokens));
+                }
+                return container;
+            }
+        }
     }
 }
