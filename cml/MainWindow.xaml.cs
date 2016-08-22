@@ -24,5 +24,18 @@ namespace cml
         {
             InitializeComponent();
         }
+
+        private void renderDocument()
+        {
+            
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = new Button();
+            b.Content = "some text lol, wow much more text wow";
+            stackPanel1.Children.Add(b);
+            sv1.Content = stackPanel1;
+        }
     }
 }
