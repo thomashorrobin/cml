@@ -17,7 +17,7 @@ namespace cml_model
         public TokenType TagType { get; private set; }
         public ComponentType ComponentType {
             get {
-                switch (tagText)
+                switch (tagText.Split(' ')[0])
                 {
                     case "cml":
                         return ComponentType.Root;

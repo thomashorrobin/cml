@@ -15,6 +15,10 @@ namespace cml_model
             rootList.Add(item);
         }
 
+        public ComponentType ComponentType { get { return ComponentType.Root; } }
+
+        public List<IRenderable> Components { get { return new List<IRenderable>(rootList); } }
+
         public string render(int indent)
         {
             StringBuilder sb = new StringBuilder();

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cml_model
+namespace cml
 {
-    public interface IRenderable
+    public interface IRewriteFile
     {
-        string render(int indent);
-        ComponentType ComponentType { get; }
+        void rewrite();
     }
 }

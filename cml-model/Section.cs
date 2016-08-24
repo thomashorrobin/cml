@@ -14,6 +14,7 @@ namespace cml_model
         }
 
         private List<IComponent> sectionList = new List<IComponent>();
+        public ComponentType ComponentType { get { return ComponentType.Section; } }
 
         public string Title { get; private set; }
 
